@@ -1,6 +1,7 @@
 import React,{ useState } from 'react';
-// import { Button } from 'antd';
+import { Button } from 'antd';
 import Home from './modules/home'
+import ModalForm from './modules/servers/create-servers'
 const columns = [{
     title: "Name",
     dataIndex: "name",
@@ -37,7 +38,7 @@ function App() {
 	return (
 		<>
 		<div className="App">
-			{/* <Create handler={setServerHandler}/> */}
+			<ModalForm/>
 			<Home data={servers} columns={columns}/>
 		</div>
 		</>
