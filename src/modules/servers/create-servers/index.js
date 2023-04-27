@@ -15,7 +15,7 @@ const ModalForm = () => {
         
         console.log(values);
         // submit form data to server
-        const saveData = axios.get('https://jsonplaceholder.typicode.com/todos/1')
+        const saveData = axios.post(`${process.env.REACT_APP_BASE_API_ENDPOINT}/servers`,values);
         saveData
         .then((result) => {
             if (result?.status === 200) {
