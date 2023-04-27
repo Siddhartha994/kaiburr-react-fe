@@ -1,7 +1,8 @@
-import React,{ useState } from 'react';
-import { Button } from 'antd';
+import React,{ useState,useEffect } from 'react';
 import Home from './modules/home'
 import ModalForm from './modules/servers/create-servers'
+import axios from 'axios';
+
 const columns = [{
     title: "Name",
     dataIndex: "name",
@@ -19,26 +20,27 @@ const columns = [{
     dataIndex: "framework",
     key: "framework"
 }]
-const data = [
-	{
-		name: 'my centos',
-		id: '123',
-		language: 'java',
-		framework: 'django',
-		key: '1'
-	},
-];
+const data = [];
+
 function App() {
 	const [servers, setServers] = useState(data);
-	
+
+	// append latest created server
 	const setServerHandler = (server) => {
-		setServers([...servers, server]);
+		setServers([server.data.data, ...servers]);
 	}
+	// call data from server upon reload
+	useEffect ( ()=>{
+		let data = axios.get(`${process.env.REACT_APP_BASE_API_ENDPOINT}/servers`)
+		data.then((res)=>{
+			setServers(res.data);
+		})
+	}, []);
 
 	return (
 		<>
 		<div className="App">
-			<ModalForm/>
+			<ModalForm handler={setServerHandler}/>
 			<Home data={servers} columns={columns}/>
 		</div>
 		</>
