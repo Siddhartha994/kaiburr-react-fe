@@ -1,8 +1,7 @@
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
+This project was created with [Create React App](https://github.com/facebook/create-react-app) 
+and [Ant Design](https://ant.design/)
 
 In the project directory, you can run:
 
@@ -11,60 +10,25 @@ In the project directory, you can run:
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Project supports CRUD operations for "Servers"
 
-### `npm test`
+Used AntD Modals, Foms & Layouts for handling data and designs in a smooth manner.
+![image](https://user-images.githubusercontent.com/57999861/235324854-7b617a93-8d15-4588-887b-bf00d0faa64e.png)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+`Create New Server`
+![image](https://user-images.githubusercontent.com/57999861/235324889-e8935b8e-38e5-434b-9669-119c2e5a212d.png)
+`Edit Existing Records`
+- use cancel or X to cancel editing
+- ok to confirm the update
 
-### `npm run build`
+![image](https://user-images.githubusercontent.com/57999861/235324913-995a029e-3dd1-4aa0-b8dd-ac362b2634cc.png)
+`Delete Records` 
+![image](https://user-images.githubusercontent.com/57999861/235325008-f26085de-e069-440f-b58e-fb7a3a4a28f5.png)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Every API call made via `REACT_APP_BASE_API_ENDPOINT` in .env.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+###`Modularised code` 
+1. css files in form of `styles.modules.css` make it easier to give ClassNames in files
+2. reusable React components help to use fragments of code everywhere
+3. folder structure helpful for scaling application using Redux
