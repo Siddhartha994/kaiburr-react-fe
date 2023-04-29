@@ -1,0 +1,39 @@
+.header{
+    background-color: 'blue';
+    display: flex;
+    padding: 0;
+}
+.sider{
+    overflow: 'auto';
+    height: '100vh';
+    position: 'fixed';
+    left: 0;
+    top: 0;
+    bottom: 0;
+}
+.sider_child{
+    height: 32;
+    margin: 16;
+    background: 'rgba(255; 255; 255; 0.2)';
+}
+.site_layout{
+    min-height: 100vh ;
+}
+.content{
+    margin: '0 50px 50px' 
+}
+.wrapper{
+    color: yellow;
+}
+.modal{
+    margin-left: auto;
+}
+.button_wrapper{
+    margin-left: auto;
+}
+.create_button{
+    color: blue;
+}
+.table-main-frame{
+    background-color: black;
+}

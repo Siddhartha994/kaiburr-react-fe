@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Form, Input, Button, Modal, message } from 'antd';
-import { CheckCircleOutlined, ExclamationCircleOutlined } from '@ant-design/icons';
+import { CheckCircleOutlined, ExclamationCircleOutlined, PlusCircleFilled } from '@ant-design/icons';
 import axios from 'axios';
 
 const ModalForm = (props) => {
@@ -11,21 +11,21 @@ const ModalForm = (props) => {
     };
     const onFinish = (values) => {
         // create unique id using ms
-        const id =  Date.now() % 10000;
-        values['id'] = id;
+        // const id =  Date.now() % 10000;
+        // values['id'] = id;
 
         // submit form data to server
         axios.post(`${process.env.REACT_APP_BASE_API_ENDPOINT}/servers`,values)
             .then((result) => {
                 if (result?.status === 200) {
                     // update state
-                    props.handler(result);  
                     // success-popup
                     message.success({
                         content: 'Form submitted successfully',
                         icon: <CheckCircleOutlined />,
                         duration: 3 // Duration in seconds to show the message
-                        });
+                    });
+                    props.handler(result);  
                     setIsModalVisible(false);
                 }
                 else if (result?.status === 400) {
@@ -56,7 +56,7 @@ const ModalForm = (props) => {
     };
     return (
         <>
-        <Button type="primary" onClick={showModal}>Create Server</Button>
+        <Button type="primary" onClick={showModal} icon={React.createElement(PlusCircleFilled)}>Create Server</Button>
         <Modal title="Add a New Server" open={isModalVisible} onCancel={() => setIsModalVisible(false)} footer={null}>
             <Form form={form} onFinish={onFinish}>
             <Form.Item label="Name" name="name" rules={[{ required: true, message: 'Please input server name!' }]}>
