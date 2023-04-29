@@ -1,0 +1,12 @@
+version: "3"
+services:
+  app:
+    build:
+      context: .
+    volumes:
+      - ./data:/kaiburrefe
+    ports:
+      - 3000:3000
+    # image: sira/kaiburrfe
+    # container_name: react_container
+    # command: npm start
