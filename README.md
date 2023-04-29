@@ -3,6 +3,9 @@
 This project was created with [Create React App](https://github.com/facebook/create-react-app) 
 and [Ant Design](https://ant.design/)
 
+
+# `Available live on a01407588b1cb4d4aa901e0d77a6ac86-494513001.us-east-1.elb.amazonaws.com:5000`
+
 In the project directory, you can run:
 
 ### `npm start`
