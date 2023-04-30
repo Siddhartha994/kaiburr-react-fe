@@ -31,9 +31,10 @@ const EditableTable = () => {
   const onFinish = (values) => {
     setConfirmLoading(true);
     if (editing) {
+      values['id'] = selectedRecord.id;
       axios
         .put(
-          `${process.env.REACT_APP_BASE_API_ENDPOINT}/${selectedRecord.id}`,
+          `${process.env.REACT_APP_BASE_API_ENDPOINT}/servers`,
           values
         )
         .then((res) => {
@@ -70,7 +71,7 @@ const EditableTable = () => {
 
   const handleDelete = (record) => {
     axios
-      .delete(`${process.env.REACT_APP_BASE_API_ENDPOINT}/${record.id}`)
+      .delete(`${process.env.REACT_APP_BASE_API_ENDPOINT}/servers/${record.id}`)
       .then(() => {
         setDataSource(dataSource.filter((r) => r.id !== record.id));
       });
